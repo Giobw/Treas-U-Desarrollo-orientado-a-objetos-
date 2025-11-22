@@ -1,4 +1,4 @@
-package model;
+package cl.duoc.salmontt.model;
 
 /**
  * Clase que hereda de Persona.
