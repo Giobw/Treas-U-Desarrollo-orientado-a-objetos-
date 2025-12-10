@@ -1,78 +1,39 @@
-Proyecto SalmonttApp - Fase 2 (Semana 5)
+# Sistema de Gestión Salmontt - Versión 3.6 🐟
 
-Descripción del Proyecto
+## 📖 Descripción del Proyecto
+Aplicación de escritorio desarrollada en Java para la gestión de recursos de la empresa salmonera **Salmontt**.
+Esta versión final (v3.6) integra una interfaz gráfica profesional con validaciones estrictas y una arquitectura robusta para gestionar personal interno y proveedores externos.
 
-Este proyecto corresponde a la Evaluación Sumativa de la Semana 5 de la asignatura Desarrollo Orientado a Objetos I.
+## 🛠 Características Técnicas (Semana 8)
+El sistema cumple con todos los requerimientos de la evaluación y agrega mejoras de usabilidad:
 
-El sistema es una actualización profesional de la gestión de personal para la empresa Salmontt. En esta versión, se ha implementado una arquitectura modular robusta, persistencia de datos mediante lectura de archivos planos (CSV) y gestión eficiente de memoria utilizando Colecciones de Java (ArrayList).
+- **Arquitectura MVC:** Código organizado modularmente en paquetes `model`, `data` y `ui`.
+- **Polimorfismo e Interfaces:** Implementación de la interfaz `Registrable` para unificar el comportamiento de distintas entidades.
+- **Lógica de Negocio:** Uso de `instanceof` en `GestorEntidades` para diferenciar y etiquetar automáticamente los registros en el reporte.
+- **Interfaz Gráfica (GUI) Avanzada:**
+    - Ventana principal moderna (`JFrame`) con diseño limpio (sin emojis para compatibilidad total).
+    - **Formularios Responsivos:** Uso de `GridBagLayout` y barras de desplazamiento (`JScrollPane`) para asegurar la visualización en cualquier pantalla.
+    - **Validación de Datos:**
+        - RUT con verificación de formato chileno (Regex).
+        - Campos obligatorios y numéricos validados.
+    - **Manejo de Dirección Detallada:** Desglose de direcciones de proveedores en Calle, Número, Comuna y Región.
+    - **Campos Opcionales:** Sección específica para ingresar información extra de productos.
 
-El objetivo principal es demostrar competencias en:
+## 📂 Estructura del Proyecto
+- `src/model`: Clases de entidad (`Empleado`, `Proveedor`, `Direccion`) y Contrato (`Registrable`).
+- `src/data`: Gestor de la colección polimórfica (`GestorEntidades`).
+- `src/ui`: Interfaz gráfica de usuario (`MenuGUI`).
+- `src/Main.java`: Punto de entrada de la aplicación.
 
-Modularidad y encapsulamiento (Paquetes y visibilidad).
+## 🚀 Instrucciones de Ejecución
+1. Abrir el proyecto en **IntelliJ IDEA**.
+2. Navegar a `src/Main.java`.
+3. Ejecutar el método `main` (Play).
+4. Utilizar el menú visual para:
+    - **Ingresar Personal:** Permite registrar empleados con cálculo automático de sueldo según cargo.
+    - **Registrar Proveedor:** Formulario completo con dirección detallada y giro.
+    - **Ver Reporte:** Genera un listado consolidado de todos los registros del sistema.
 
-Uso de Colecciones para manejo dinámico de objetos.
-
-Lectura de datos externos y manejo de excepciones (try-catch).
-
-Estructura del Proyecto (Paquetes)
-
-El código fuente se ha refactorizado bajo el dominio cl.duoc.salmontt para seguir estándares profesionales:
-
-cl.duoc.salmontt.app
-
-Contiene la clase Main.java. Es el punto de entrada del programa, encargado de orquestar la carga de datos y la interacción con el usuario (consola).
-
-cl.duoc.salmontt.model
-
-Contiene las clases de dominio del negocio: Empleado, Persona y Direccion.
-
-Estas clases aplican principios de POO como Herencia, Composición y Encapsulamiento.
-
-cl.duoc.salmontt.service
-
-Contiene la clase SalmonttService. Actúa como una librería personalizada que encapsula la lógica de negocio.
-
-Aquí se gestiona la lista de empleados (ArrayList) y la lectura del archivo empleados.csv.
-
-cl.duoc.salmontt.util
-
-Paquete reservado para validaciones y utilidades transversales del sistema.
-
-Requisitos de Ejecución
-
-Java JDK: Versión 11 o superior.
-
-IDE: IntelliJ IDEA (Recomendado).
-
-Archivo de Datos: El archivo empleados.csv debe estar ubicado estrictamente en la carpeta raíz del proyecto (al mismo nivel que la carpeta src).
-
-Instrucciones de Instalación y Uso
-
-Clonar o Descargar: Descarga el proyecto en tu equipo.
-
-Verificar Archivo CSV: Asegúrate de que el archivo empleados.csv contenga datos válidos en el formato:
-RUT,Nombre,Apellido,Calle,Numero,Ciudad,ID,Cargo
-
-Ejecutar:
-
-Abre el proyecto en IntelliJ IDEA.
-
-Navega al paquete cl.duoc.salmontt.app.
-
-Ejecuta la clase Main.
-
-Resultados:
-
-El sistema cargará automáticamente los datos del archivo.
-
-Se mostrará el listado completo en la consola.
-
-Se ejecutarán pruebas automáticas de filtros por cargo.
-
-Autor
-
-Nombre: Giovanni Bencini
-
-Asignatura: Desarrollo Orientado a Objetos I (PRY2202)
-
-Institución: Duoc UC
+## 👤 Autor
+Giovanni Bencini
+*Desarrollo de Soluciones en Java - Duoc UC*
